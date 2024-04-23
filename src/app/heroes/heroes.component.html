@@ -16,15 +16,4 @@
   }
 </ul>
 
-@if (selectedHero) {
-<div>
-  <h2>{{ selectedHero.name | uppercase }} Details</h2>
-  <div>id: {{ selectedHero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name" />
-  </div>
-</div>
-} @else {
-<div>Click on one of the Hero</div>
-}
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
