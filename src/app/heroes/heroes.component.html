@@ -2,18 +2,11 @@
 <ul class="heroes">
   @for (h of heroes; track h.id){
   <li>
-    <button
-      [class.selected]="h === selectedHero"
-      type="button"
-      (click)="onSelect(h)"
-    >
-      <span class="badge">{{ h.id }}</span>
-      <span class="name">{{ h.name }}</span>
-    </button>
+    <a routerLink="/detail/{{ h.id }}">
+      <span class="badge">{{ h.id }}</span> {{ h.name }}
+    </a>
   </li>
   } @empty {
   <li>There is no hero</li>
   }
 </ul>
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
